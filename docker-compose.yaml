@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    
+    container_name: portainer
+
+    restart: always
+    
+    # Remove the exposed ports if using network bridge with reverse proxy
+    ports:
+      - 9443:9443
+      
+    volumes:
+      - portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  portainer_data:
+    external: true
+
+# Overrides the default network of the compose stack, use this for exposing dashy indirectly through a reverse proxy
+
+# networks:
+#   default:
+#     name: ${NETWORK_NAME}
+#     external: true
+
