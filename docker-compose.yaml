@@ -20,7 +20,7 @@ volumes:
   portainer_data:
     external: true
 
-# Overrides the default network of the compose stack, use this for exposing dashy indirectly through a reverse proxy
+# Overrides the default network of the compose stack, use this for exposing portainer indirectly through a reverse proxy
 
 # networks:
 #   default:
