@@ -6,7 +6,7 @@ services:
     
     container_name: portainer
 
-    restart: always
+    restart: unless-stopped
     
     # Remove the exposed ports if using network bridge with reverse proxy
     ports:
